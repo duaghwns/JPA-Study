@@ -13,11 +13,17 @@ public class JpaMain {
         tx.begin();
         try{
             Member member = new Member();
-            member.setId(1L);
-            member.setName("duaghwns");
+//            member.setId(1L);
+//            member.setName("duaghwns");
+//            em.persist(member);
 
-            em.persist(member);
+            Member member1 = em.find(Member.class, 1L);
+            Member member2 = em.find(Member.class, 1L);
 
+            System.out.println("Member : " + member1.getName());
+            System.out.println("mem1 or mem2 : " + (member1 == member2));
+            // persist 없이 update 됌
+            member2.setName("hojoon");
             tx.commit();
         } catch (Exception e){
             tx.rollback();
