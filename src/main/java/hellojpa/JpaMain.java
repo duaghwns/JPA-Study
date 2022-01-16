@@ -24,6 +24,9 @@ public class JpaMain {
             System.out.println("mem1 or mem2 : " + (member1 == member2));
             // persist 없이 update 됌
             member2.setName("hojoon");
+            em.flush();
+
+
             tx.commit();
         } catch (Exception e){
             tx.rollback();
