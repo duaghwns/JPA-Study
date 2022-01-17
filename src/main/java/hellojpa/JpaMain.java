@@ -12,10 +12,10 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try{
-            Member member = new Member();
+            Member member = new Member(1L,"염호준",27);
 //            member.setId(1L);
 //            member.setName("duaghwns");
-//            em.persist(member);
+            em.persist(member);
 
             Member member1 = em.find(Member.class, 1L);
             Member member2 = em.find(Member.class, 1L);
