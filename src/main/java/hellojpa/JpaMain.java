@@ -14,13 +14,11 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try{
-            Member member = new Member(1L,"염호준",27);
-//            member.setId(1L);
-//            member.setName("duaghwns");
+            Member member = new Member(2L,"염호준",27,"대전광역시","내동 162-2","1234");
             em.persist(member);
 
             Member member1 = em.find(Member.class, 1L);
-            Member member2 = em.find(Member.class, 1L);
+            Member member2 = em.find(Member.class, 2L);
 
             System.out.println("Member : " + member1.getName());
             System.out.println("mem1 or mem2 : " + (member1 == member2));
