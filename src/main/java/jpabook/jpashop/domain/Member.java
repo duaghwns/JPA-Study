@@ -12,11 +12,10 @@ import java.util.Date;
 @AllArgsConstructor
 public class  Member {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "MEMBER_ID")
     private Long id;
-    @Column(name = "name")
-    private String username;
-
-
+    private String name;
+    private Integer age;
     private String city;
     private String street;
     private String zipcode;
