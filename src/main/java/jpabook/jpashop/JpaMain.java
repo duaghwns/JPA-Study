@@ -1,4 +1,4 @@
-package hellojpa;
+package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Member;
 
@@ -14,17 +14,6 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try{
-            Member member = new Member(2L,"염호준",27,"대전광역시","내동 162-2","1234");
-            em.persist(member);
-
-            Member member1 = em.find(Member.class, 1L);
-            Member member2 = em.find(Member.class, 2L);
-
-            System.out.println("Member : " + member1.getName());
-            System.out.println("mem1 or mem2 : " + (member1 == member2));
-            // persist 없이 update 됌
-            member2.setName("hojoon");
-            em.flush();
 
 
             tx.commit();
